@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Ensemble MCQ Solver</title>
-    <!-- Tailwind CSS CDN for styling -->
-    <script src="https://jsdelivr.net"></script>
+    <!-- Stable Tailwind CSS v3 Play CDN to ensure absolute style delivery without build tools -->
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-slate-50 text-slate-800 min-h-screen font-sans flex flex-col justify-between">
+<body class="bg-gray-100 text-gray-800 min-h-screen font-sans flex flex-col justify-between">
 
     <!-- Header Navbar -->
-    <header class="bg-white border-b border-slate-200 py-4 shadow-sm">
+    <header class="bg-white border-b border-gray-200 py-4 shadow-sm">
         <div class="max-w-4xl mx-auto px-4 flex items-center justify-between">
             <div class="flex items-center space-x-3">
                 <span class="text-2xl">🧠</span>
-                <h1 class="text-xl font-bold text-slate-900 tracking-tight">Ensemble MCQ Solver</h1>
+                <h1 class="text-xl font-bold text-gray-900 tracking-tight">Ensemble MCQ Solver</h1>
             </div>
-            <span class="text-xs bg-emerald-100 text-emerald-800 font-semibold px-2.5 py-1 rounded-full">HF Model Connected</span>
+            <span class="text-xs bg-green-100 text-green-800 font-semibold px-2.5 py-1 rounded-full">HF Model Connected</span>
         </div>
     </header>
 
@@ -24,34 +24,34 @@
     <main class="max-w-4xl w-full mx-auto px-4 py-8 flex-grow grid grid-cols-1 md:grid-cols-5 gap-6">
         
         <!-- Input Form Section (3/5 width) -->
-        <section class="md:col-span-3 bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
-            <h2 class="text-lg font-bold text-slate-900 mb-4">Input Question Parameters</h2>
+        <section class="md:col-span-3 bg-white p-6 rounded-2xl shadow-sm border border-gray-200">
+            <h2 class="text-lg font-bold text-gray-900 mb-4">Input Question Parameters</h2>
             <form id="mcqForm" class="space-y-4">
                 <div>
-                    <label class="block text-sm font-semibold text-slate-700 mb-1">Enter Question Stem</label>
-                    <textarea id="question" required rows="3" class="w-full px-3 py-2 border border-slate-300 rounded-xl shadow-xs focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all placeholder-slate-400" placeholder="Type or paste your complex target question here..."></textarea>
+                    <label class="block text-sm font-semibold text-gray-700 mb-1">Enter Question Stem</label>
+                    <textarea id="question" required rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all placeholder-gray-400" placeholder="Type or paste your complex target question here..."></textarea>
                 </div>
                 
                 <div class="grid grid-cols-1 gap-3">
                     <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Option A</label>
-                        <input id="optA" type="text" required class="w-full px-3 py-2 border border-slate-300 rounded-xl shadow-xs focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Choice A text">
+                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-1">Option A</label>
+                        <input id="optA" type="text" required class="w-full px-3 py-2 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Choice A text">
                     </div>
                     <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Option B</label>
-                        <input id="optB" type="text" required class="w-full px-3 py-2 border border-slate-300 rounded-xl shadow-xs focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Choice B text">
+                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-1">Option B</label>
+                        <input id="optB" type="text" required class="w-full px-3 py-2 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Choice B text">
                     </div>
                     <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Option C</label>
-                        <input id="optC" type="text" required class="w-full px-3 py-2 border border-slate-300 rounded-xl shadow-xs focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Choice C text">
+                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-1">Option C</label>
+                        <input id="optC" type="text" required class="w-full px-3 py-2 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Choice C text">
                     </div>
                     <div>
                         <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Option D</label>
-                        <input id="optD" type="text" required class="w-full px-3 py-2 border border-slate-300 rounded-xl shadow-xs focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Choice D text">
+                        <input id="optD" type="text" required class="w-full px-3 py-2 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Choice D text">
                     </div>
                     <div>
                         <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Option E</label>
-                        <input id="optE" type="text" required class="w-full px-3 py-2 border border-slate-300 rounded-xl shadow-xs focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Choice E text">
+                        <input id="optE" type="text" required class="w-full px-3 py-2 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Choice E text">
                     </div>
                 </div>
 
@@ -63,12 +63,12 @@
 
         <!-- Prediction Summary Section (2/5 width) -->
         <section class="md:col-span-2 flex flex-col space-y-4">
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex-grow flex flex-col justify-between">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 flex-grow flex flex-col justify-between">
                 <div>
-                    <h2 class="text-lg font-bold text-slate-900 mb-4">Inference Diagnostics</h2>
+                    <h2 class="text-lg font-bold text-gray-900 mb-4">Inference Diagnostics</h2>
                     
                     <!-- App Welcome / Empty Placeholder state -->
-                    <div id="emptyState" class="text-center py-12 text-slate-400">
+                    <div id="emptyState" class="text-center py-12 text-gray-400">
                         <span class="text-4xl block mb-2">📊</span>
                         <p class="text-sm">Submit data on the left to activate neural voting tracking logs.</p>
                     </div>
@@ -76,19 +76,19 @@
                     <!-- Spinner Loader (Hidden by default) -->
                     <div id="loadingState" class="hidden text-center py-12">
                         <div class="animate-spin rounded-full h-10 w-10 border-b-2 border-blue-600 mx-auto mb-3"></div>
-                        <p class="text-sm text-slate-500">Querying Hugging Face nodes...</p>
+                        <p class="text-sm text-gray-500">Querying Hugging Face nodes...</p>
                     </div>
 
                     <!-- Result Panel Display (Hidden by default) -->
                     <div id="resultState" class="hidden space-y-5">
-                        <div class="p-4 bg-emerald-50 border border-emerald-200 rounded-xl">
-                            <span class="text-xs uppercase font-bold text-emerald-800 tracking-wide block mb-1">Top Predicted Choice</span>
-                            <div class="text-2xl font-black text-emerald-900 mb-1" id="resLetter">Option A</div>
-                            <p class="text-slate-700 text-sm italic" id="resText">"Example winning text resolution output..."</p>
+                        <div class="p-4 bg-green-50 border border-green-200 rounded-xl">
+                            <span class="text-xs uppercase font-bold text-green-800 tracking-wide block mb-1">Top Predicted Choice</span>
+                            <div class="text-2xl font-black text-green-900 mb-1" id="resLetter">Option A</div>
+                            <p class="text-gray-700 text-sm italic" id="resText">"Example winning text resolution output..."</p>
                         </div>
 
                         <div>
-                            <h3 class="text-xs uppercase font-bold text-slate-500 tracking-wide mb-2">Confidence Voting Distribution</h3>
+                            <h3 class="text-xs uppercase font-bold text-gray-500 tracking-wide mb-2">Confidence Voting Distribution</h3>
                             <div class="space-y-2" id="distributionContainer">
                                 <!-- Bars injected dynamically by Javascript -->
                             </div>
@@ -100,7 +100,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-slate-900 text-slate-400 text-center py-4 text-xs border-t border-slate-800">
+    <footer class="bg-gray-900 text-gray-400 text-center py-4 text-xs border-t border-gray-800">
         Powered by Vercel Serverless Architecture & Hugging Face inference Hub.
     </footer>
 
@@ -118,7 +118,9 @@
             emptyState.classList.add('hidden');
             resultState.classList.add('hidden');
             loadingState.classList.remove('hidden');
-            submitBtn.disabled = True;
+            
+            // FIX: Use lowercase JavaScript boolean declarations ('true' / 'false')
+            submitBtn.disabled = true;
             submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
 
             const payload = {
@@ -154,11 +156,11 @@
                     const row = document.createElement('div');
                     row.className = "flex items-center text-xs space-x-2";
                     row.innerHTML = `
-                        <span class="w-6 font-bold text-slate-600">${letter}</span>
-                        <div class="flex-grow bg-slate-100 rounded-full h-2.5 overflow-hidden">
+                        <span class="w-6 font-bold text-gray-600">${letter}</span>
+                        <div class="flex-grow bg-gray-100 rounded-full h-2.5 overflow-hidden">
                             <div class="bg-blue-600 h-2.5 rounded-full" style="width: ${percentage}"></div>
                         </div>
-                        <span class="w-10 text-right font-semibold text-slate-700">${percentage}</span>
+                        <span class="w-10 text-right font-semibold text-gray-700">${percentage}</span>
                     `;
                     distContainer.appendChild(row);
                 });
@@ -171,7 +173,8 @@
                 loadingState.classList.add('hidden');
                 emptyState.classList.remove('hidden');
             } finally {
-                submitBtn.disabled = False;
+                // FIX: Use lowercase JavaScript boolean declarations
+                submitBtn.disabled = false;
                 submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
             }
         });
