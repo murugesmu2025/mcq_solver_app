@@ -49,10 +49,13 @@ def query_hf_api(url, payload):
 @app.post("/api/solve")
 def solve_mcq(data: MCQRequest):
     options = [data.option_a, data.option_b, data.option_c, data.option_d, data.option_e]
-    
+    prompt_pairs = [[data.question, option] for option in options]
     # Payload format parsed by Hugging Face's pipeline for Multiple Choice / Text Classification
     payload = {
-        "inputs": f"Question: {data.question} Options: A) {data.option_a} B) {data.option_b} C) {data.option_c} D) {data.option_d} E) {data.option_e}"
+        "inputs": {
+            "text": [pair[0] for pair in prompt_pairs],       # Duplicated Questions array
+            "text_pair": [pair[1] for pair in prompt_pairs]  # Respective choice target strings
+        }
     }
 
     all_probabilities = []
