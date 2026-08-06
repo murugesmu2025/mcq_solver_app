@@ -21,9 +21,9 @@ HF_TOKEN = os.environ.get("HF_TOKEN", "your_huggingface_read_token_here")
 HEADERS = {"Authorization": f"Bearer {HF_TOKEN}"}
 
 MODEL_URLS = [
-    "https://huggingface.co/Murugeswaran/mcq-ensemble-solver/tree/main/distilbert_base_uncased",
-    "https://huggingface.co/Murugeswaran/mcq-ensemble-solver/tree/main/bert_base_uncased",
-    "https://huggingface.co/Murugeswaran/mcq-ensemble-solver/tree/main/roberta_base"
+    "https://huggingface.co/Murugeswaran/mcq-ensemble-solver/distilbert_base_uncased",
+    "https://huggingface.co/Murugeswaran/mcq-ensemble-solver/bert_base_uncased",
+    "https://huggingface.co/Murugeswaran/mcq-ensemble-solver/roberta_base"
 ]
 
 class MCQRequest(BaseModel):
