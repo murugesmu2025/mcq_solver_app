@@ -46,7 +46,7 @@ def query_hf_api(url, payload):
     except requests.exceptions.Timeout:
         raise HTTPException(status_code=504, detail="Hugging Face connection timed out.")
 
-@app.post("/")
+@app.post("/api/solve")
 def solve_mcq(data: MCQRequest):
     options = [data.option_a, data.option_b, data.option_c, data.option_d, data.option_e]
     
