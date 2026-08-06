@@ -3,7 +3,7 @@
     { "src": "api/index.py", "use": "@vercel/python" }
   ],
   "rewrites": [
-    { "source": "/api/solve", "destination": "api/solve.py" },
-    { "source": "/(.*)", "destination": "public/$1" }
+    { "source": "/api/solve", "destination": "/api/index.py" },
+    { "source": "/(.*)", "destination": "/public/$1" }
   ]
 }
